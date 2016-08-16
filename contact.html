@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="ru" ng-app> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="libs/animate/animate.css">
+	<!--bootstrap-->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+	<!--main style-->
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/media.css">
+	<script src="libs/modernizr/modernizr.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+</head>
+<body>
+	<!--header begin-->
+	<header class="main-header clearfix">
+		<div class="container fixed-top">
+			<div class="row">
+				<!--left-header-->
+				<div class="col-md-3 col-sm-12 header-left">
+					<a href="#" class="logo"><img class="img-responsive" src="img/logo.png" alt="consulting"></a>
+				</div>
+				<!--main-nav-->
+				<div class="col-md-7 col-sm-9 hidden-xs header-center">
+					<nav class="main-nav">
+						<a class="home-link" href="index.html">Home</a>
+						<a href="#">About us</a>
+						<a href="#">Service</a>
+						<a href="#">Product</a>
+						<a class="blog-item-pg" href="blog.html">Blog</a>
+						<a class="active-link " href="contact.html">Contacts</a>
+					</nav>
+
+				</div>
+				<div class="col-md-2 col-xs-12 col-sm-3 col-lg-2 header-right">
+					<form class="top-form" action="#" method="POST">
+						<input class="search-top-txt" type="text" name="search-top">
+						<button type="button"><i class="glyphicon glyphicon-search"></i></button>
+					</form>
+				</div>
+				<!--search-block-->
+				<select class="visible-xs hidden-md col-xs-12 col-sm-pull-12 col-sm-12 nav-list">
+					<option>Home</option>
+					<option><a href="#"><-Archive></-Archive></a></option>
+					<option><a href="#">FAQs</a></option>
+					<option><a href="#">Testimonials</a></option>
+					<option><a href="#">–Cras suscipit</a></option>
+					<option><a href="#">–Lorem ipsum</a></option>
+					<option><a href="#">–Vestibulum a diam</a></option>
+					<option><a href="#">About Us</a></option>
+					<option><a href="#">Products »</a></option>
+					<option><a href="blog.html">Blog »</a></option>
+					<option><a href="contact.html">Contacts »</a></option>
+				</select>
+			</div>
+		</div>
+	</header>
+	<div class="pjax-container"> 
+	<div class="container"> 
+		<div class="row"> 
+			<div id="contacts-map">
+				<h2 class="title-about">our location</h2>
+				<!--map contacts-->
+				<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?hl=en&amp;q=9870+St.+Vincent+Pl%2C+Glasgow%2C+United+Kingdom&amp;iwloc=A&amp;z=14&amp;t=m&amp;output=embed"></iframe>
+			</div>
+		</div>
+		<div class="row wraper-contacts"> 
+			<div class="col-md-6 col-sm-12 col-xs-12 left-contact">
+				<h2 class="title-about text-center">contact form</h2>
+				<form name="frm" class="form-horizontal contact-form" action='#' method="POST">
+					<!--hidden type form-->
+					<input type="hidden" name="project_name" value="test-form">
+					<input type="hidden" name="admin_email" value="example@gmail.com">
+					<input type="hidden" name="form_subject" value="Заявка с формы!">
+					<!--end hidden type form-->
+					<fieldset>
+						<div id="legend">
+							<legend class="text-center">Register</legend>
+						</div>
+						<div class="control-group">
+							<!-- Username -->
+							<label class="control-label"  for="username">Username</label>
+							<div class="controls">
+								
+								<input 
+								type="text" 
+								id="username" 
+								name="username" 
+								placeholder="enter your username please" 
+								class="input-xlarge user-name-input" 
+								ng-model="user.username" 
+								ng-minlength="6"
+								ng-maxlength="22"
+								required />
+
+								<p class=" help-block" ng-show="frm.username.$invalid">Username should be Full Name,should contain 2 words</p>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<!-- E-mail -->
+							<label class="control-label" for="email">E-mail</label>
+							<div class="controls">
+								
+								<input 
+								type="email" 
+								id="email" 
+								name="email" 
+								placeholder="enter your email please" 
+								class="input-xlarge user-email-input" 
+								ng-model="user.email" 
+
+								required />
+
+								<p class="help-block" 
+								ng-show="frm.email.$dirty && frm.email.$error.required">E-mail like - t@t.c, t@t.co should pass!</p>
+								<p class="help-block" 
+								ng-show="frm.email.$dirty && frm.email.$error.email">This is not email!</p>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<!-- Password-->
+							<label class="control-label" for="password">Password</label>
+							<div class="controls">
+								
+								<input 
+								type="password" 
+								id="password" 
+								name="password" 
+								placeholder="enter your password,please" 
+								class="input-xlarge"
+								ng-model="user.password"
+								ng-minlength="6"
+								ng-maxlength="15"
+								required />
+
+								<p class="help-block" ng-show="frm.password.$dirty && frm.password.$error.minlength">Too short!Password should be more than 6 symbold</p>
+								<p class="help-block" ng-show="frm.password.$dirty && frm.password.$error.maxlength">Too long!</p>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<!-- Password -->
+							<label class="control-label"  for="password_confirm">Password (Confirm)</label>
+							<div class="controls">
+								<input type="password" id="password_confirm" name="password_confirm" placeholder="Please confirm password" class="input-xlarge" required>
+								<p class="help-block">Please confirm password</p>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<!-- Button -->
+							<div class="controls">
+								<button class="btn-success center-block" 
+								ng-disabled="frm.$invalid">Register</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+
+			</div>
+			<div class="col-md-6 col-sm-12 col-xs-12 right-contact-info">
+				<h2 class="title-about text-center">contact information</h2>
+				<div class="contact-info-content">
+					<h2 class="subtitle">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</h2>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque et quasi architecto beatae vitae dicta sunt explicabo. Mornunc odio gravida atcursus neus a lorem. Maecenas tristique orci ac sem. Duis ultric pharetra magna. Donec accumsan malesuada orcic sit amet eros. Lorem ipsum dolor sit amet onsectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor dapibus eget. Mauris tincidunt aliquam lectus sed vestibulum. Vestibulum bibendum suscipit mattis. Praesent nec tincidunt turpis. Aliquam et nisi risus. Cras ut varius ante. Ut congue gravida dolor, vitae viverra dolor.</p>
+				</div>
+				<div class="row"> 
+					<div class="col-md-6">
+						<ul class="address-list">
+							<li>The Company Name Inc.</li>
+							<li>9870 St Vincent Place,</li>
+							<li>Glasgow, DC 45 Fr 45.</li>
+						</ul>
+
+					</div>
+					<div class="col-md-6">
+						<ul class="nav-contact-list">
+							<li>Telephone:<a href="tel:+1800229933"> +1 959 603 6035</a></li>
+							<li>Email:<a class="mail-item" href="mailto:mail@demolink.org"> mail@demolink.org</a></li>
+							<li>FAX:<a href="tel:+1800229933"> + 1 504 889 9898</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<footer>
+		<div class="name-company col-xs-12">
+			<h5 class="title-footer">Stay informed © 2016 <a href="#0">Privacy Policy</a> </h5>
+		</div>
+	</footer>
+
+
+	<!--to-top-->
+	<a id="back-to-top" href="#0">
+		<span class="arrow"></span>
+	</a>
+
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="js/common.js"></script>
+
+</body>
+</html>
